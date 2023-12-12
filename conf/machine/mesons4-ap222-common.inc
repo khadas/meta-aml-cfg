@@ -1,0 +1,68 @@
+#@TYPE: Machine
+#@NAME: meson
+
+#@DESCRIPTION: Machine configuration for meson systems
+
+include conf/machine/include/amlogic_weston.inc
+include conf/machine/include/amlogic_aiot_common.inc
+
+PREFERRED_PROVIDER_virtual/mesa = "libgles-eabihf-dvalin-wayland-drm"
+PREFERRED_PROVIDER_virtual/mesa-gl = "libgles-eabihf-dvalin-wayland-drm"
+PREFERRED_PROVIDER_virtual/libgbm = "libgles-eabihf-dvalin-wayland-drm"
+PREFERRED_PROVIDER_virtual/egl = "libgles-eabihf-dvalin-wayland-drm"
+PREFERRED_PROVIDER_virtual/libgl = "libgles-eabihf-dvalin-wayland-drm"
+PREFERRED_PROVIDER_virtual/libgles1 = "libgles-eabihf-dvalin-wayland-drm"
+PREFERRED_PROVIDER_virtual/libgles2 = "libgles-eabihf-dvalin-wayland-drm"
+
+MACHINE_EXTRA_RRECOMMENDS += " \
+        gpu \
+        wififw-qca6174 \
+        qca6174 \
+        aucpu-fw \
+        coreutils \
+        "
+
+RDEPENDS:packagegroup-amlogic-baserootfs:remove = " aml-subtitleserver"
+RDEPENDS:packagegroup-amlogic-baserootfs:remove = " gst-aml-drm-plugins"
+RDEPENDS:packagegroup-amlogic-baserootfs:remove = " fuse-exfat"
+
+CHIPSET_NAME = "S905Y4"
+KERNEL_DEVICETREE = "s4_s905y4_ap222_linux.dtb"
+UBOOT_MACHINE = "s4_ap222_config"
+KERNEL_MODULE_AUTOLOAD += " btqca"
+KERNEL_MODULE_PROBECONF += "btqca"
+KERNEL_MODULE_AUTOLOAD += " snd-soc-dummy_codec"
+KERNEL_MODULE_AUTOLOAD += " snd-soc-aml_t9015"
+KERNEL_MODULE_AUTOLOAD += " meson_ir"
+KERNEL_MODULE_AUTOLOAD += " hci_uart"
+KERNEL_MODULE_PROBECONF += "hci_uart"
+KERNEL_MODULE_AUTOLOAD += "aml_aucpu"
+KERNEL_MODULE_AUTOLOAD += " media_sync"
+KERNEL_MODULE_AUTOLOAD += "meson-cpufreq"
+
+DISTRO_FEATURES:append = " drm"
+DISTRO_FEATURES:append = " gpt-partition"
+DISTRO_FEATURES:append = " kernel_515"
+
+DISTRO_FEATURES:append = " secure-u-boot optee "
+DISTRO_FEATURES:append = " alsa "
+DISTRO_FEATURES:append = " pam"
+DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+DEFAULT_DISTRO_FEATURES += " systemd"
+DISTRO_FEATURES:append = " systemd"
+DISTRO_FEATURES:remove = " sysvinit"
+DISTRO_FEATURES:append = " gstreamer1"
+DISTRO_FEATURES:append = " aml-dtv "
+
+DISTRO_FEATURES:append = " softap"
+DISTRO_FEATURES:append = " recovery"
+DISTRO_FEATURES:append = " swupdate"
+DISTRO_FEATURES:append = " aml-libgdc"
+
+OVERRIDES .= ":ap222:s4:onepass"
+MACHINEOVERRIDES .= ":client"
+
+EXTRA_BLUETOOTH_STUFF := "${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', bb.utils.contains('DISTRO_FEATURES', 'bluez5', ' bluez5', ' bluez4', d), '', d)}"
+EXTRA_BLUETOOTH_STUFF += " bluez-alsa"
+DISTRO_FEATURES:append = "${EXTRA_BLUETOOTH_STUFF}"
+
