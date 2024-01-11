@@ -62,6 +62,7 @@ DISTRO_FEATURES:append = " aml-libgdc"
 OVERRIDES .= ":ap222:s4:onepass"
 MACHINEOVERRIDES .= ":client"
 
+DISTRO_FEATURES:append = " bt-qca"
 EXTRA_BLUETOOTH_STUFF := "${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', bb.utils.contains('DISTRO_FEATURES', 'bluez5', ' bluez5', ' bluez4', d), '', d)}"
 EXTRA_BLUETOOTH_STUFF += " bluez-alsa"
 DISTRO_FEATURES:append = "${EXTRA_BLUETOOTH_STUFF}"

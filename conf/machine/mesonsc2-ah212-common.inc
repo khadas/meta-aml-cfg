@@ -70,6 +70,7 @@ DISTRO_FEATURES:append = " mediactrlsrc"
 OVERRIDES .= ":ah212:sc2:onepass"
 MACHINEOVERRIDES .= ":client"
 
+DISTRO_FEATURES:append = " bt-qca"
 DISTRO_FEATURES:append = " bluetooth bluez5 "
 EXTRA_BLUETOOTH_STUFF := "${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', bb.utils.contains('DISTRO_FEATURES', 'bluez5', ' bluez5', ' bluez4', d), '', d)}"
 EXTRA_BLUETOOTH_STUFF += " bluez-alsa"

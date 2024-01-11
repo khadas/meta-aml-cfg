@@ -70,8 +70,9 @@ DISTRO_FEATURES:append = " mediactrlsrc"
 
 MACHINEOVERRIDES .= ":client"
 
+DISTRO_FEATURES:append = " bt-bcm"
 EXTRA_BLUETOOTH_STUFF := "${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', bb.utils.contains('DISTRO_FEATURES', 'bluez5', ' bluez5', ' bluez4', d), '', d)}"
 EXTRA_BLUETOOTH_STUFF += " bluez-alsa"
-#EXTRA_BLUETOOTH_STUFF += " brcm-patchram-plus"
+EXTRA_BLUETOOTH_STUFF += " brcm-patchram-plus"
 DISTRO_FEATURES:append = "${EXTRA_BLUETOOTH_STUFF}"
 
