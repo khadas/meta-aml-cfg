@@ -199,6 +199,7 @@ RDEPENDS:packagegroup-amlogic-baserootfs += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nnstreamer-example', 'nnstreamer-example', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'detect-sample', 'detect-sample', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nndemo-library', 'nndemo-library', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'aml-log', 'aml-log', '', d)} \
     "
 
 RDEPENDS:packagegroup-amlogic-baserootfs += " \
