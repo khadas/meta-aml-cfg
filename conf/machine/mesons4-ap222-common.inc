@@ -22,10 +22,6 @@ MACHINE_EXTRA_RRECOMMENDS += " \
         coreutils \
         "
 
-RDEPENDS:packagegroup-amlogic-baserootfs:remove = " aml-subtitleserver"
-RDEPENDS:packagegroup-amlogic-baserootfs:remove = " gst-aml-drm-plugins"
-RDEPENDS:packagegroup-amlogic-baserootfs:remove = " fuse-exfat"
-
 CHIPSET_NAME = "S905Y4"
 KERNEL_DEVICETREE = "s4_s905y4_ap222_linux.dtb"
 UBOOT_MACHINE = "s4_ap222_config"
@@ -33,31 +29,11 @@ KERNEL_MODULE_AUTOLOAD += " btqca"
 KERNEL_MODULE_PROBECONF += "btqca"
 KERNEL_MODULE_AUTOLOAD += " snd-soc-dummy_codec"
 KERNEL_MODULE_AUTOLOAD += " snd-soc-aml_t9015"
-KERNEL_MODULE_AUTOLOAD += " meson_ir"
-KERNEL_MODULE_AUTOLOAD += " hci_uart"
-KERNEL_MODULE_PROBECONF += "hci_uart"
 KERNEL_MODULE_AUTOLOAD += "aml_aucpu"
 KERNEL_MODULE_AUTOLOAD += " media_sync"
-KERNEL_MODULE_AUTOLOAD += "meson-cpufreq"
 
-DISTRO_FEATURES:append = " drm"
 DISTRO_FEATURES:append = " gpt-partition"
 DISTRO_FEATURES:append = " kernel_515"
-
-DISTRO_FEATURES:append = " secure-u-boot optee "
-DISTRO_FEATURES:append = " alsa "
-DISTRO_FEATURES:append = " pam"
-DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
-DEFAULT_DISTRO_FEATURES += " systemd"
-DISTRO_FEATURES:append = " systemd"
-DISTRO_FEATURES:remove = " sysvinit"
-DISTRO_FEATURES:append = " gstreamer1"
-DISTRO_FEATURES:append = " aml-dtv "
-
-DISTRO_FEATURES:append = " softap"
-DISTRO_FEATURES:append = " recovery"
-DISTRO_FEATURES:append = " swupdate"
-DISTRO_FEATURES:append = " aml-libgdc"
 
 OVERRIDES .= ":ap222:s4:onepass"
 MACHINEOVERRIDES .= ":client"

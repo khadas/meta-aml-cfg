@@ -18,9 +18,12 @@ IMAGE_FEATURES += "splash "
 
 IMAGE_INSTALL += " \
     packagegroup-amlogic-baserootfs \
+    boa \
     ${@bb.utils.contains('DISTRO_FEATURES', 'selinux', 'auditd', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'selinux', bb.utils.contains('DISTRO_FEATURES', 'selinux-debug', \
     'packagegroup-core-selinux', 'packagegroup-selinux-minimal selinux-autorelabel', d), '', d)} \
+    ${@bb.utils.contains("DISTRO_FEATURES", "gst1-plugins-tsplayer", "gst1-plugins-tsplayer", "", d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'swupdate', 'swupdate aml-bootloader-message', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'test_tools', 'test-tools', '', d)} \
     "
 

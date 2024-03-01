@@ -4,6 +4,7 @@
 #@DESCRIPTION: Machine configuration for meson debian OS systems
 
 DISTRO_FEATURES:append = " amlbian"
+DISTRO_FEATURES:append = " nfs-boot"
 
 # clear linux version extension information, keep original
 LINUX_VERSION_EXTENSION ?= ""

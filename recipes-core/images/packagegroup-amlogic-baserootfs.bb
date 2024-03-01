@@ -2,27 +2,8 @@ SUMMARY = "Amlogic Yocto packgegroup"
 
 LICENSE = "MIT"
 
+PACKAGE_ARCH = "${TUNE_PKGARCH}"
 inherit packagegroup
-EXPORT_FUNCTIONS get_package_mapping
-#PACKAGE_ARCH = "${TUNE_PKGARCH}"
-def get_package_mapping (pkg, basepkg, d, depversions=None):
-    import oe.packagedata
-    data = oe.packagedata.read_subpkgdata(pkg, d)
-    key = "PKG:%s" % pkg
-    if key in data:
-        if bb.data.inherits_class('allarch', d) and bb.data.inherits_class('packagegroup', d) and pkg != data[key]:
-          bb.warn("An allarch packagegroup shouldn't depend on packages which are dynamically renamed (%s to %s)" % (pkg, data[key]))
-        if bb.data.inherits_class('allarch', d) and not d.getVar('MULTILIB_VARIANTS') \
-        and data[key] == basepkg:
-            return pkg
-        if depversions == []:
-            rprovkey = "RPROVIDES:%s" % pkg
-            if rprovkey in data:
-                if pkg in bb.utils.explode_dep_versions2(data[rprovkey]):
-                    bb.note("%s rprovides %s, not replacing the latter" % (data[key], pkg))
-                    return pkg
-        return data[key]
-    return pkg
 
 PACKAGES = "\
     packagegroup-amlogic-baserootfs \
@@ -181,6 +162,11 @@ RDEPENDS:packagegroup-amlogic-baserootfs += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'gst-plugin-venc', bb.utils.contains('DISTRO_FEATURES', 'aml-libamvenc', 'gst-plugin-venc-amlvenc', '', d), '', d)} \
     "
 
+#AML linux_sample_app screencapture related
+RDEPENDS:packagegroup-amlogic-baserootfs += " \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'aml-screencapture', 'aml-screencapture', '', d)} \
+    "
+
 #AML gstreamer aml utils, common lib for other plugins
 #AML gstreamer overlay and nnsdk demo plugin
 RDEPENDS:packagegroup-amlogic-baserootfs += " \
@@ -199,7 +185,11 @@ RDEPENDS:packagegroup-amlogic-baserootfs += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nnstreamer-example', 'nnstreamer-example', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'detect-sample', 'detect-sample', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nndemo-library', 'nndemo-library', '', d)} \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'aml-log', 'aml-log', '', d)} \
+    "
+
+#AML test 
+RDEPENDS_packagegroup-amlogic-baserootfs += " \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'aml-test', 'aml-test', '', d)} \
     "
 
 RDEPENDS:packagegroup-amlogic-baserootfs += " \

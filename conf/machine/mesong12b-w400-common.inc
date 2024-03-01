@@ -25,10 +25,6 @@ MACHINE_EXTRA_RRECOMMENDS += " \
         coreutils \
         "
 
-RDEPENDS:packagegroup-amlogic-baserootfs:remove = " aml-subtitleserver"
-RDEPENDS:packagegroup-amlogic-baserootfs:remove = " gst-aml-drm-plugins"
-RDEPENDS:packagegroup-amlogic-baserootfs:remove = " gst-agmplayer"
-RDEPENDS:packagegroup-amlogic-baserootfs:remove = " fuse-exfat"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " isp isp-dev"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common"
 
@@ -42,34 +38,15 @@ KERNEL_MODULE_AUTOLOAD += " snd-soc-dummy_codec"
 KERNEL_MODULE_AUTOLOAD += " snd-soc-aml_t9015"
 KERNEL_MODULE_AUTOLOAD += " snd-soc-tas5707"
 KERNEL_MODULE_AUTOLOAD += " snd-soc-aml_codec_tl1_acodec"
-KERNEL_MODULE_AUTOLOAD += " meson_ir"
-KERNEL_MODULE_AUTOLOAD += " hci_uart"
-KERNEL_MODULE_PROBECONF += "hci_uart"
-KERNEL_MODULE_AUTOLOAD += "meson-cpufreq"
 
-DISTRO_FEATURES:append = " drm"
-
-DISTRO_FEATURES:append = " secure-u-boot optee "
-DISTRO_FEATURES:append = " alsa "
-DISTRO_FEATURES:append = " pam"
-DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
-DEFAULT_DISTRO_FEATURES += " systemd"
-DISTRO_FEATURES:append = " systemd"
-DISTRO_FEATURES:remove = " sysvinit"
-DISTRO_FEATURES:append = " gstreamer1"
-DISTRO_FEATURES:append = " aml-dtv "
-DISTRO_FEATURES:append = " gst-plugin-venc"
 DISTRO_FEATURES:append = " aml-libjpeg"
 DISTRO_FEATURES:append = " aml-libamvenc-264"
 DISTRO_FEATURES:append = " aml-libamvenc-265"
 DISTRO_FEATURES:append = " aml-libamvenc"
 DISTRO_FEATURES:append = " arm-isp "
 DISTRO_FEATURES:append = " softap"
-DISTRO_FEATURES:append = " aml-libgdc"
-DISTRO_FEATURES:append = " swupdate"
-DISTRO_FEATURES:append = " recovery"
 
-DISTRO_FEATURES:append = " mediactrlsrc"
+DISTRO_FEATURES:append = " mediactrlsrc-hdmi"
 
 MACHINEOVERRIDES .= ":client"
 
