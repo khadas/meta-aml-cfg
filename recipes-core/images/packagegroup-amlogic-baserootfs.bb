@@ -186,8 +186,8 @@ RDEPENDS:packagegroup-amlogic-baserootfs += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nndemo-library', 'nndemo-library', '', d)} \
     "
 
-#AML test 
-RDEPENDS_packagegroup-amlogic-baserootfs += " \
+#AML test
+RDEPENDS:packagegroup-amlogic-baserootfs += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'aml-test', 'aml-test', '', d)} \
     "
 
