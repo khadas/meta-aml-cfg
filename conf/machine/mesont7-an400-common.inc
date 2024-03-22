@@ -52,6 +52,7 @@ DISTRO_FEATURES:append = " softap"
 
 DISTRO_FEATURES:append = " mediactrlsrc-cam"
 DISTRO_FEATURES:append = " mediactrlsrc-hdmi"
+OVERRIDES .= ":an400:t7:onepass"
 MACHINEOVERRIDES .= ":client"
 
 DISTRO_FEATURES:append = " bt-bcm"

@@ -45,6 +45,7 @@ DISTRO_FEATURES:append = " softap"
 
 DISTRO_FEATURES:append = " mediactrlsrc-hdmi"
 
+OVERRIDES .= ":ac200:sm1:onepass"
 MACHINEOVERRIDES .= ":client"
 
 DISTRO_FEATURES:append = " bt-bcm"
