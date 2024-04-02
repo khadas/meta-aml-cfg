@@ -154,6 +154,7 @@ RDEPENDS:packagegroup-amlogic-baserootfs = "\
     ${@bb.utils.contains('DISTRO_FEATURES', 'brcm-patchram-plus', 'brcm-patchram-plus', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'aml-libgdc', 'libgdc', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'bluez5-obex', '', d)} \
+    web-ui-wifi \
     "
 
 #VENC related
