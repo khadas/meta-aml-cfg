@@ -25,7 +25,7 @@ DISTRO_FEATURES:append = " gstreamer1"
 DISTRO_FEATURES:append = " recovery"
 DISTRO_FEATURES:append = " swupdate"
 
-#DISTRO_FEATURES:append = " aml-libgdc"
+DISTRO_FEATURES:append = " aml-libgdc"
 DISTRO_FEATURES:append = " secure-u-boot optee "
 DISTRO_FEATURES:append = " alsa "
 DISTRO_FEATURES:append = " pam"
