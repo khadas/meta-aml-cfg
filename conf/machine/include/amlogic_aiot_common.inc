@@ -32,6 +32,8 @@ DISTRO_FEATURES:append = " pam"
 #DISTRO_FEATURES:append = " aml-dtv "
 DISTRO_FEATURES:append = " drm"
 
+DISTRO_FEATURES:append = " utf8"
+
 DISTRO_FEATURES:append = " gst-aml-gfx2d"
 DISTRO_FEATURES:append = " dma-allocator"
 DISTRO_FEATURES:append = " gst-aml-dma-allocator"
