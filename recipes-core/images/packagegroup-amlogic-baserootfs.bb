@@ -24,7 +24,6 @@ RDEPENDS:packagegroup-amlogic-baserootfs = "\
     alsa-utils \
     dnsmasq \
     bash \
-    dhcpcd \
     systemd \
     curl \
     dropbear \
