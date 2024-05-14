@@ -8,14 +8,7 @@ include conf/machine/include/amlogic_aiot_common.inc
 include conf/machine/include/amlogic_aiot_nndemo.inc
 include conf/machine/include/amlogic_enc_common.inc
 
-
-PREFERRED_PROVIDER_virtual/mesa = "libgles-eabihf-gondul-wayland-drm"
-PREFERRED_PROVIDER_virtual/mesa-gl = "libgles-eabihf-gondul-wayland-drm"
-PREFERRED_PROVIDER_virtual/libgbm = "libgles-eabihf-gondul-wayland-drm"
-PREFERRED_PROVIDER_virtual/egl = "libgles-eabihf-gondul-wayland-drm"
-PREFERRED_PROVIDER_virtual/libgl = "libgles-eabihf-gondul-wayland-drm"
-PREFERRED_PROVIDER_virtual/libgles1 = "libgles-eabihf-gondul-wayland-drm"
-PREFERRED_PROVIDER_virtual/libgles2 = "libgles-eabihf-gondul-wayland-drm"
+require conf/machine/include/amlogic_gondul.inc
 
 MACHINE_EXTRA_RRECOMMENDS += " \
         gpu \
