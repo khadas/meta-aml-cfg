@@ -13,7 +13,7 @@ require conf/machine/include/amlogic_gondul.inc
 
 MACHINE_EXTRA_RRECOMMENDS += " \
         gpu \
-        wififw-ap6398 \
+        wififw-ap6275 \
         ap6xxx \
         adla-driver \
 		coreutils \
