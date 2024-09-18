@@ -23,6 +23,7 @@ RDEPENDS:packagegroup-amlogic-baserootfs:append = " isp isp-dev"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " cve libcve"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " adla-lib"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common"
+RDEPENDS:packagegroup-amlogic-baserootfs:append = " iozone3"
 
 PREFERRED_VERSION_isp = "5.15"
 PREFERRED_VERSION_ap6xxx = "5.15"
