@@ -22,6 +22,7 @@ RDEPENDS:packagegroup-amlogic-baserootfs:append = " isp isp-dev"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " khadas-custom"
 
+BOARD_NAME = "vim3"
 CHIPSET_NAME = "A311D"
 KERNEL_DEVICETREE = "g12b_kvim3.dtb"
 UBOOT_MACHINE = " kvim3_config"

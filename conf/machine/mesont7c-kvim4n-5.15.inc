@@ -27,6 +27,7 @@ RDEPENDS:packagegroup-amlogic-baserootfs:append = " iozone3 iperf3 fio v4l-utils
 
 PREFERRED_VERSION_isp = "5.15"
 PREFERRED_VERSION_ap6xxx = "5.15"
+BOARD_NAME = "vim4"
 CHIPSET_NAME = "A311D2"
 KERNEL_DEVICETREE = "t7c_kvim4n.dtb t7_kvim4.dtb"
 UBOOT_MACHINE = "t7c_kvim4n_config"
