@@ -36,6 +36,10 @@ RDEPENDS:packagegroup-amlogic-baserootfs = "\
     ntfs-3g \
     glib-2.0 \
     gnutls \
+    cmake \
+    opencv \
+    opencv-dev \
+    opencv-samples \
     jansson \
     libgcrypt \
     libgpg-error \
