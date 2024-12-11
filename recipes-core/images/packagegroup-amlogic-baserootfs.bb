@@ -41,6 +41,11 @@ RDEPENDS:packagegroup-amlogic-baserootfs = "\
     opencv-dev \
     opencv-samples \
     opencv-staticdev \
+    iozone3 \
+    iperf3 \
+    fio \
+    v4l-utils \
+    git \
     jansson \
     libgcrypt \
     libgpg-error \
