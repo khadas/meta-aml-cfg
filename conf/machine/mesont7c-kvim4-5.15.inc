@@ -22,8 +22,8 @@ MACHINE_EXTRA_RRECOMMENDS += " \
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " isp isp-dev"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " cve libcve"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " adla-lib"
-RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common"
-RDEPENDS:packagegroup-amlogic-baserootfs:append = " iozone3 iperf3 fio v4l-utils khadas-custom khadas-gsensor "
+RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common npu-common-dev "
+RDEPENDS:packagegroup-amlogic-baserootfs:append = " iozone3 iperf3 fio v4l-utils khadas-custom khadas-gsensor git "
 
 PREFERRED_VERSION_isp = "5.15"
 PREFERRED_VERSION_ap6xxx = "5.15"
