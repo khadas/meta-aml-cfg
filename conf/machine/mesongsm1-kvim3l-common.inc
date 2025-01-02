@@ -19,7 +19,9 @@ MACHINE_EXTRA_RRECOMMENDS += " \
         "
 
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common"
+RDEPENDS:packagegroup-amlogic-baserootfs:append = " khadas-custom"
 
+BOARD_NAME = "vim3l"
 CHIPSET_NAME = "S905D3"
 KERNEL_DEVICETREE = "sm1_kvim3l.dtb"
 UBOOT_MACHINE = " kvim3l_config"
