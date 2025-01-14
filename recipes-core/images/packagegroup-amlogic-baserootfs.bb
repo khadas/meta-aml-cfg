@@ -39,6 +39,11 @@ RDEPENDS:packagegroup-amlogic-baserootfs = "\
     cmake \
     opencv \
     opencv-dev \
+    libopencv-imgproc-dev \
+    libopencv-core-dev \
+    libopencv-videoio-dev \
+    libopencv-imgcodecs-dev \
+    libopencv-highgui-dev \
     opencv-samples \
     opencv-staticdev \
     iozone3 \
