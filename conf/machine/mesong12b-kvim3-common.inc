@@ -19,7 +19,7 @@ MACHINE_EXTRA_RRECOMMENDS += " \
         "
 
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " isp isp-dev"
-RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common"
+RDEPENDS:packagegroup-amlogic-baserootfs:append = " npu-common npu-common-dev"
 RDEPENDS:packagegroup-amlogic-baserootfs:append = " khadas-custom"
 
 BOARD_NAME = "vim3"
