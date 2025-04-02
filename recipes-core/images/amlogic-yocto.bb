@@ -197,6 +197,14 @@ process_for_read_only_rootfs(){
 
 ROOTFS_POSTPROCESS_COMMAND += "${@bb.utils.contains('DISTRO_FEATURES', 'OverlayFS', '', 'process_for_read_only_rootfs; ', d)}"
 
+ROOTFS_POSTPROCESS_COMMAND += "do_setup_environment; "
+
+do_setup_environment(){
+    if [ -f ${IMAGE_ROOTFS}/etc/environment ]; then
+        echo "QT_QPA_PLATFORM=wayland" >> ${IMAGE_ROOTFS}/etc/environment
+    fi
+}
+
 # The following is needed only if chained
 AVB_DMVERITY_SIGNINING_KEY = "system_rsa2048.pem"
 AVB_DMVERITY_SIGNINING_ALGORITHM = "SHA256_RSA2048"

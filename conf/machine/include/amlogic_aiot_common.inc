@@ -43,3 +43,4 @@ DISTRO_FEATURES:append = " aml-screencapture"
 DISTRO_FEATURES:append = " aml-test"
 
 DISTRO_FEATURES:append = " mediactrlsrc"
+DISTRO_FEATURES:append = " qt5 qt5-tests"

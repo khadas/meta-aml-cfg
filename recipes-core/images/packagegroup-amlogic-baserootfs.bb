@@ -124,7 +124,9 @@ RDEPENDS:packagegroup-amlogic-baserootfs = "\
         fbscripts \
         ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'qt5', \
-        'qtbase \
+        'packagegroup-qt5-toolchain-target \
+        qtbase \
+        qtbase-examples \
         qtwebkit \
         qtwayland \
         qtquickcontrols2 \
