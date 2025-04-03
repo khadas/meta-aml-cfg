@@ -171,6 +171,12 @@ RDEPENDS:packagegroup-amlogic-baserootfs = "\
     ${@bb.utils.contains('DISTRO_FEATURES', 'aml-libgdc', 'libgdc', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'bluez5-obex', '', d)} \
     web-ui-wifi \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'networkmanager', \
+    'networkmanager \
+    networkmanager-nmcli \
+    networkmanager-nmtui \
+    wpa-supplicant \
+    ', '', d)} \
     "
 
 #VENC related
