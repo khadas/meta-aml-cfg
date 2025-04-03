@@ -202,6 +202,7 @@ ROOTFS_POSTPROCESS_COMMAND += "do_setup_environment; "
 do_setup_environment(){
     if [ -f ${IMAGE_ROOTFS}/etc/environment ]; then
         echo "QT_QPA_PLATFORM=wayland" >> ${IMAGE_ROOTFS}/etc/environment
+        echo "GST_DEFAULT_V4L2_BUF_MODE=DMA_BUF_IMPORT" >> ${IMAGE_ROOTFS}/etc/environment
     fi
 }
 
